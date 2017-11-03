@@ -40,7 +40,7 @@ TGAS['hip']=TGAS['hip'].apply(lambda x:x.replace('.0',''))
 ######################################################################
 # LEE LA BASE DE DATOS DE RVcat
 ######################################################################
-RV=pd.read_csv(dirdata+"RVCat.csv",skiprows=1)
+RV=pd.read_csv(dirdata+"RVGaia/RVCat.csv",skiprows=1)
 RV=RV.drop(RV.columns[[0]],axis=1)
 cats=['hip','tycho2_id']
 for cname in cats:
@@ -57,8 +57,8 @@ print("Number of RV objects:",len(RV))
 RVgaia=pd.DataFrame()
 columns=GAIA.columns.tolist()+["RV","eRV"]
 
-Nfreq=1000
-Ntot=10e100*Nfreq
+Nfreq=10
+Ntot=10*Nfreq
 ti=mytimer()
 k=0
 for TYC2,HIP in zip(RV.TYC2.values,RV.HIP.values):
@@ -82,5 +82,5 @@ for TYC2,HIP in zip(RV.TYC2.values,RV.HIP.values):
 #PREPARE AND SAVE
 ######################################################################
 RVgaia=RVgaia[columns]
-RVgaia.to_csv(datadir+"RVGaia.csv",index=False)
+RVgaia.to_csv(datadir+"RVGaia/RVGaia.csv",index=False)
 print("Number of Gaia stars with radial velocities:",len(RVgaia))
