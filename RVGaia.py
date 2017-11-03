@@ -23,7 +23,6 @@ for i in range(16):
         print("Reading", file)
         DRx = pd.read_csv(filename) #, usecols=cols)
         TGAS = TGAS.append(DRx)
-    break
 TGAS = pd.DataFrame(TGAS)
 
 ######################################################################
@@ -40,7 +39,7 @@ TGAS['hip']=TGAS['hip'].apply(lambda x:x.replace('.0',''))
 ######################################################################
 # LEE LA BASE DE DATOS DE RVcat
 ######################################################################
-RV=pd.read_csv(dirdata+"RVGaia/RVCat.csv",skiprows=1)
+RV=pd.read_csv(datadir+"RVGaia/RVCat.csv",skiprows=1)
 RV=RV.drop(RV.columns[[0]],axis=1)
 cats=['hip','tycho2_id']
 for cname in cats:

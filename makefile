@@ -11,3 +11,10 @@ commit:
 	@echo "Commiting..."
 	@-git commit -am "Commit"
 	@-git push origin master
+
+purge:
+	@rm -r Store/*--*
+pack:
+	@bash store.sh pack
+unpack:
+	@bash store.sh unpack
