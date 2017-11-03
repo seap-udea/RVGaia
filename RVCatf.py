@@ -40,7 +40,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"]
 df["eRV"]=data[name]["e_RV"]
@@ -81,7 +81,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["e_RV"].map(str)
@@ -122,7 +122,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["e_RV"].map(str)
@@ -164,7 +164,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["e_RV"].map(str)
@@ -206,7 +206,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="RAJ2000",DECJ2000="DEJ2000")
+COORDS=dict(RAJ2000="RAJ2000",DEJ2000="DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["HRV"].map(str)
 df["eRV"]=data[name]["e_HRV"].map(str)
@@ -248,7 +248,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RA",DECJ2000="_DE")
+COORDS=dict(RAJ2000="_RA",DEJ2000="_DE")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["eRV"].map(str)
@@ -290,7 +290,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["e_RV"].map(str)
@@ -331,7 +331,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=data[name]["e_RV"].map(str)
@@ -372,7 +372,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="_RAJ2000",DECJ2000="_DEJ2000")
+COORDS=dict(RAJ2000="_RAJ2000",DEJ2000="_DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=1.0;df["eRV"]=df["eRV"].map(str) #TYPICAL VALUE FOR OTHER CATALOGUES
@@ -414,7 +414,7 @@ if not 'TYC2' in data[name].columns:df["TYC2"]=''
 else:df["TYC2"]=data[name]["TYC2"]
 if not 'HIP' in data[name].columns:df["HIP"]=''
 else:df["HIP"]=data[name]["HIP"].apply(lambda x:x.replace('.0',''))
-COORDS=dict(RAJ2000="RAJ2000",DECJ2000="DEJ2000")
+COORDS=dict(RAJ2000="RAJ2000",DEJ2000="DEJ2000")
 for C in COORDS.keys():df[C]=data[name][COORDS[C]]
 df["RV"]=data[name]["RV"].map(str)
 df["eRV"]=0.6;df["eRV"]=df["eRV"].map(str) #Martell et al. (2017)

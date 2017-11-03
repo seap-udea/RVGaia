@@ -24,18 +24,18 @@ indexes=[]
 tini=mytimer()
 ti=mytimer()
 Nfreq=1000
-Ntot=1e100 #100*Nfreq
-for TYC2,HIP in zip(RVcatf.TYC2.values,RVcatf.HIP.values):
+Ntot=1e100*Nfreq
+for tycho2_id,hip in zip(RVcatf.tycho2_id.values,RVcatf.hip.values):
     if (k%Nfreq)==0:
         te=mytimer()
         print("Entry %d (time = %.3e)..."%(k,te-ti))
         ti=mytimer()
 
-    if TYC2!='':
-        rep=RVcatf[RVcatf.TYC2==TYC2].sort_values('eRV')
+    if tycho2_id!='':
+        rep=RVcatf[RVcatf.tycho2_id==tycho2_id].sort_values('eRV')
         if(len(rep)>1):indexes+=list(rep.index[1:])
-    elif HIP!='':
-        rep=RVcatf[RVcatf.HIP==HIP].sort_values('eRV')
+    elif hip!='':
+        rep=RVcatf[RVcatf.hip==hip].sort_values('eRV')
         if(len(rep)>1):indexes+=list(rep.index[1:])
 
     k+=1
