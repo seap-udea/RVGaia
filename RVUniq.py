@@ -6,7 +6,7 @@ from util import *
 ###################################################
 #VARIABLES
 ###################################################
-datadir="./"
+datadir="DB/"
 
 #THIS SCRIPT IS DESIGNED TO BE RUN IN IPYTHON
 qip=1
@@ -19,7 +19,7 @@ if argv[1]=='1':
     # LEE LA BASE DE DATOS DE RVcatf
     ######################################################################
     print("Reading RVCat...")
-    RV=pd.read_csv(datadir+"RVGaia/RVCatf.csv")
+    RV=pd.read_csv(datadir+"RVCatf.csv")
     cats=['hip','tycho2_id']
     for cname in cats:
         RV[cname]=RV[cname].fillna('')
@@ -39,7 +39,7 @@ def uniqCat(RV):
         print("Number of uniq entries for %s: %d"%(col,len(uniq)))
         RVCat=RVCat.append(uniq)
 
-    RVCat.to_csv(datadir+"RVGaia/RVCat.csv",index=False)
+    RVCat.to_csv(datadir+"RVCat.csv",index=False)
     print("Total number of uniq objects:%d"%len(RVCat))
         
 if not qip:uniqCat(RV)

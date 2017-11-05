@@ -7,7 +7,7 @@ from util import *
 #VARIABLES
 ###################################################
 srcdir="RV/"
-datadir="./RVGaia/"
+datadir="./DB/"
 
 ###################################################
 #INITIAL DATA

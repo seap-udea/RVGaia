@@ -7,6 +7,7 @@ from util import *
 #VARIABLES
 ###################################################
 datadir="./"
+dbdir="DB/"
 
 #THIS SCRIPT IS DESIGNED TO BE RUN IN IPYTHON
 qip=1
@@ -47,7 +48,7 @@ if argv[1]=='1':
     # LEE LA BASE DE DATOS DE RVcat
     ######################################################################
     print("Reading RVCat...")
-    RV=pd.read_csv(datadir+"RVGaia/RVCat.csv")
+    RV=pd.read_csv(datadir+dbdir+"RVCat.csv")
     cats=['hip','tycho2_id']
     for cname in cats:
         RV[cname]=RV[cname].fillna('')
@@ -76,8 +77,7 @@ def runMerge(TGAS,RV):
         RVGaia=RVGaia.append(result)
 
     RVGaia=RVGaia.fillna('NULL')
-    RVGaia.to_csv(datadir+"RVGaia/RVGaia.csv",index=False)
+    RVGaia.to_csv(datadir+dbdir+"RVGaia.csv",index=False)
     print("Number of matches: %d"%len(RVGaia))
 
 if not qip:runMerge(TGAS,RV)
-

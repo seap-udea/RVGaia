@@ -1,0 +1,5 @@
+To start, after cloning the directory execute:
+
+   make unpack
+
+This will create readable versions of the catalog (DB/RVGaia.csv).
