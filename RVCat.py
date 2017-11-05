@@ -28,16 +28,13 @@ Ntot=1e100*Nfreq
 for tycho2_id,hip in zip(RVcatf.tycho2_id.values,RVcatf.hip.values):
     if (k%Nfreq)==0:
         te=mytimer()
-        print("Entry %d (time = %.3e)..."%(k,te-ti))
+        print("Entry %d (time = %.3e/%.3e)..."%(k,te-ti,te-tini))
         ti=mytimer()
 
-    if tycho2_id!='':
-        rep=RVcatf[RVcatf.tycho2_id==tycho2_id].sort_values('eRV')
-        if(len(rep)>1):indexes+=list(rep.index[1:])
-    elif hip!='':
-        rep=RVcatf[RVcatf.hip==hip].sort_values('eRV')
-        if(len(rep)>1):indexes+=list(rep.index[1:])
+    if tycho2_id!='':rep=RVcatf[RVcatf.tycho2_id==tycho2_id].sort_values('eRV')
+    if hip!='':rep=RVcatf[RVcatf.hip==hip].sort_values('eRV')
 
+    if(len(rep)>1):indexes+=list(rep.index[1:])
     k+=1
     if k>Ntot:break
 

@@ -12,7 +12,7 @@ if [ $pack = "pack" ];then
 	sdir="Store/$dname--$fname"
 	mkdir -p "$sdir"
 	cd $sdir
-	split -b 20000kb ../../$file $fname-
+	split -b 20000KB ../../$file $fname-
 	cd - &> /dev/null
     done
 else

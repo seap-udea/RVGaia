@@ -59,13 +59,14 @@ columns=TGAS.columns.tolist()+RVcolumns
 
 Nfreq=1000
 Ntot=1e100*Nfreq
+tini=mytimer()
 ti=mytimer()
 k=0
+m=0
 for tycho2_id,hip in zip(RV.tycho2_id.values,RV.hip.values):
-    print(tycho2_id,hip)
     if (k%Nfreq)==0:
         te=mytimer()
-        print("Entry %d (time = %.3e)..."%(k,te-ti))
+        print("Entry %d (time = %.3e/%.3e), match %d/%d..."%(k,te-ti,te-tini,m,k))
         ti=mytimer()
     row=RV.iloc[k]
     match=pd.DataFrame()
@@ -73,16 +74,19 @@ for tycho2_id,hip in zip(RV.tycho2_id.values,RV.hip.values):
     if hip!='':
         if len(match)==0:match=TGAS[TGAS.hip==hip]
     if len(match)>0:
-        print "Match!"
+        m+=1
         found=match.iloc[0]
         nrow=pd.concat([found,row[RVcolumns]])
         RVgaia=RVgaia.append(nrow,ignore_index=True)
     k+=1
     if k>Ntot:break
 
+RVgaia=RVgaia[columns]
+tend=mytimer()
+print("Total time = %.3e"%(tend-tini))
+
 ######################################################################
 #PREPARE AND SAVE
 ######################################################################
-RVgaia=RVgaia[columns]
 RVgaia.to_csv(datadir+"RVGaia/RVGaia.csv",index=False)
 print("Number of Gaia stars with radial velocities:",len(RVgaia))
