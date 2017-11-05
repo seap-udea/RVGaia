@@ -80,3 +80,4 @@ def runMerge(TGAS,RV):
     print("Number of matches: %d"%len(RVGaia))
 
 if not qip:runMerge(TGAS,RV)
+
