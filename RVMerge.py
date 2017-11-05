@@ -75,6 +75,7 @@ def runMerge(TGAS,RV):
         print("Number of matchings for %s: %d"%(col[0],len(result)))
         RVGaia=RVGaia.append(result)
 
+    RVGaia=RVGaia.fillna('NULL')
     RVGaia.to_csv(datadir+"RVGaia/RVGaia.csv",index=False)
     print("Number of matches: %d"%len(RVGaia))
 
