@@ -4,6 +4,7 @@ if [ "x$pack" == "x" ];then pack="pack";fi
 
 if [ $pack = "pack" ];then
     echo "Packing..."
+    rm -r Store/*--*
     for file in $(cat Store/store.conf)
     do
 	echo -e "\tfile $file..."
@@ -15,6 +16,7 @@ if [ $pack = "pack" ];then
 	split -b 20000KB ../../$file $fname-
 	cd - &> /dev/null
     done
+    git add Store/*--*
 else
     echo "Unpacking..."
     for file in $(cat Store/store.conf)
