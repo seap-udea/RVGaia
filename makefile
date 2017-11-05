@@ -1,8 +1,8 @@
 clean:
 	@find . -name "*~" -exec rm {} \;
 	@find . -name "#*#" -exec rm {} \;
-	@find . -name "__*__" -exec rm -r {} \;
 	@find . -name "*.pyc" -exec rm -r {} \;
+	@rm -rf __*__
 
 pull:
 	@-git reset --hard HEAD
