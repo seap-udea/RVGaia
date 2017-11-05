@@ -16,6 +16,6 @@ commit:
 purge:
 	@rm -r Store/*--*
 pack:
-	@bash store.sh pack
+	@bash Store/store.sh pack
 unpack:
-	@bash store.sh unpack
+	@bash Store/store.sh unpack
